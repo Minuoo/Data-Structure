@@ -10,79 +10,95 @@ public class ArrayList {
     public boolean addFirst(Object element) {
         return add(0, element);
     }
+
     public boolean addLast(int element) {
         elementData[size] = element;
         size++;
         return true;
     }
+
     public boolean add(int index, Object element) {
-        for(int i = size - 1; i >= index; i--) {
+        for (int i = size - 1; i >= index; i--) {
             elementData[i + 1] = elementData[i];
         }
         elementData[index] = element;
         size++;
         return true;
     }
+
     public Object removeFirst() {
         return remove(0);
     }
+
     public Object removeLast() {
         return remove(size - 1);
     }
+
     public Object remove(int index) {
         Object removed = elementData[index];
-        for(int i = index + 1; i <= size - 1; i++) {
+        for (int i = index + 1; i <= size - 1; i++) {
             elementData[i - 1] = elementData[i];
         }
         size--;
         elementData[size] = null;
         return removed;
     }
+
     public Object get(int index) {
         return elementData[index];
     }
+
     public int size() {
         return size;
     }
+
     public int indexOf(Object o) {
-        for(int i = 0; i < size; i++) {
-            if(o.equals(elementData[i])) {
+        for (int i = 0; i < size; i++) {
+            if (o.equals(elementData[i])) {
                 return i;
             }
         }
         return -1;
     }
+
     class ListIterator {
         private int nextIndex = 0;
+
         public boolean hasNext() {
             return nextIndex < size();
         }
+
         public Object next() {
             return elementData[nextIndex++];
         }
+
         public boolean hasPrevious() {
             return nextIndex > 0;
         }
+
         public Object previous() {
             return elementData[--nextIndex];
         }
+
         public void add(Object element) {
             ArrayList.this.add(nextIndex++, element);
         }
+
         public void remove() {
             ArrayList.this.remove(nextIndex - 1);
             nextIndex--;
         }
     }
+
     public ListIterator listIterator() {
         return new ListIterator();
     }
 
     public String toString() {
         String str = "[";
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             str += elementData[i];
-            if(i < size - 1) {
+            if (i < size - 1) {
                 str += ",";
             }
         }
