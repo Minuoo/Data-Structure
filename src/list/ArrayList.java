@@ -1,8 +1,6 @@
-package list.arraylist.implementation;
+package list;
 
-import java.util.ListIterator;
-
-public class ArrayList {
+public class ArrayList<N> {
 
     private int size = 0;
     private Object[] elementData = new Object[100];

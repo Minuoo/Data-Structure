@@ -1,4 +1,4 @@
-package stack.arraystack;
+package stack;
 
 public class ArrayStack {
     int top; //인덱스

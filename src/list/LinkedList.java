@@ -1,4 +1,4 @@
-package list.linkedlist.implementation;
+package list;
 
 public class LinkedList {
     private Node head;

@@ -1,4 +1,4 @@
-package stack.linkedliststack;
+package stack;
 
 public class LinkedListStack {
     public class Node {

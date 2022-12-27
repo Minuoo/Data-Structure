@@ -1,4 +1,4 @@
-package queue.arrayqueue;
+package queue;
 
 public class ArrayQueue {
     int MAX = 1000;

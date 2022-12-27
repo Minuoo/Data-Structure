@@ -1,6 +1,6 @@
 package queue;
 
-public class Main {
+public class QueueMain {
     public static void main(String[] args) {
 
     }

@@ -1,4 +1,4 @@
-package list.doublylinkedlist.implementation.implementation;
+package list;
 
 public class DoublyLinkedList {
     private Node head;
