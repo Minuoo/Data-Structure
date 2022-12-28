@@ -13,8 +13,13 @@ public class LinkedListGraph {
             this.weight = weight;
         }
 
-        public int getVertex() { return this.vertex; }
-        public int getWeight() { return this.weight; }
+        public int getVertex() {
+            return this.vertex;
+        }
+
+        public int getWeight() {
+            return this.weight;
+        }
     }
 
     // 아래부터 인접리스트 구현
@@ -24,7 +29,7 @@ public class LinkedListGraph {
     public LinkedListGraph(int initSize) {
         this.adList = new ArrayList<ArrayList<Node>>();
         this.size = initSize;
-        for(int i = 0; i < initSize + 1; i++)
+        for (int i = 0; i < initSize + 1; i++)
             this.adList.add(new ArrayList<Node>());
     }
 
@@ -42,10 +47,14 @@ public class LinkedListGraph {
     }
 
     // 전체 그래프 가져오기
-    public ArrayList<ArrayList<Node>> getGraph() { return this.adList; }
+    public ArrayList<ArrayList<Node>> getGraph() {
+        return this.adList;
+    }
 
     // 특정 vertex의 list 정보 가져오기
-    public ArrayList<Node> getVertex(int idx) { return this.adList.get(idx); }
+    public ArrayList<Node> getVertex(int idx) {
+        return this.adList.get(idx);
+    }
 
     // 특정 vertex X와 vertex Y의 관계 반환
     public int getWeight(int vertex_x, int vertex_y) {
@@ -55,9 +64,9 @@ public class LinkedListGraph {
     // vertex가 0번 혹은 1번부터 시작할 수 있으니 startIdx를 가져온다.
     public void printGraph(int startIdx) {
         StringBuilder sb = new StringBuilder();
-        for(int i = startIdx; i <= this.size; i++) {
+        for (int i = startIdx; i <= this.size; i++) {
             sb.append("정점 ").append(i).append("의 인접 정점 리스트");
-            for(int j = 0; j < this.adList.get(i).size(); j++)
+            for (int j = 0; j < this.adList.get(i).size(); j++)
                 sb.append(" -> ").append(this.adList.get(i).get(j).getVertex());
             sb.append("\n");
         }
